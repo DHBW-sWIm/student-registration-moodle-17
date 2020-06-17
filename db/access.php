@@ -1,5 +1,5 @@
 <?php
-// This file is part of the Local Analytics plugin for Moodle
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,34 +14,30 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Information about the version of the plugin.
  *
  * @package   local_student_registration
  * @copyright 2020 "DHBW Mannheim" 
  * @license   https://moodle.dhbw-mannheim.de/ 
  */
 
-
-
 defined ( 'MOODLE_INTERNAL' ) || die();
 
 $capabilities = array(
     'local/student_registration:view' => array(
-        'captype' => 'read',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'manager' => CAP_ALLOW,
-            'student' => CAP_ALLOW
-        )
-    ),
-    'local/student_registration:manage' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
-            'manager' => CAP_ALLOW,
-            'student' => CAP_ALLOW
+            'manager' => CAP_ALLOW
         )
-    )
+    ),
+    'local/student_registration:manage' => array(
+        'riskbitmask' => RISK_XSS,
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_USER,
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array(
+            'manager' => CAP_ALLOW
+        ))
 );

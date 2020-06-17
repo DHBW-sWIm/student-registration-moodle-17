@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of the Local Analytics plugin for Moodle
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,8 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
 /**
- * 
+ * German language.
+ *
  * @package   local_student_registration
  * @copyright 2020 "DHBW Mannheim" 
  * @license   https://moodle.dhbw-mannheim.de/ 
@@ -23,9 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-function xmldb_local_student_registration_install() {
 
-
-
-    return true;
-}
+$string['pluginname'] = 'student_registration';
+$string['processname'] = 'Studentenregistrierung';
+$string['newprocess'] = 'Neue Studentenregistrierungsprozess anlegen';
