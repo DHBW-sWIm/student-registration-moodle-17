@@ -30,3 +30,4 @@ $string['pluginname'] = 'student_registration';
 $string['processname'] = 'Student registration';
 $string['newprocess'] = 'Create a new student registration process';
 $string['teststring'] = 'Test Page';
+$string['student_registration:cr'] = 'Role for company representatives';

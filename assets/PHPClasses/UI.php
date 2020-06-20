@@ -72,6 +72,7 @@ class CreateTile {
     public array $listElement;
     public $color = 'danger';
     
+    
     /*This function sets a title */
     public function setTitle($param) {
        $this->title = $param;
@@ -96,4 +97,8 @@ class CreateTile {
     public function setColor($param){
         $this->color = $param;
     }
+    public function setGlobal($Role){
+        
+    }
 }
+

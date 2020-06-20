@@ -1,4 +1,6 @@
 <?php
+
+
 // This file is part of the Local Analytics plugin for Moodle
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -23,10 +25,10 @@
  * @license   https://moodle.dhbw-mannheim.de/ 
  */
 
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_student_registration';
-$plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0 (Build: 2020051500)';
-$plugin->requires = 2014051200;
-$plugin->version = 20200621715;
+ /* This document should contain the course creation view 
+  * Here the manager should be able to create courses for a certain ST process 
+  * and have an overview (table) of all other relevant courses of that ST 
+  * whenever the manager click on a record he or she will redirect to 
+  * ST_course_student_assignment view 
+  */

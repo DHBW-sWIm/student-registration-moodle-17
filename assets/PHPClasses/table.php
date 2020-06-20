@@ -16,17 +16,41 @@
 
 
 /**
- * Information about the version of the plugin.
  *
  * @package   local_student_registration
- * @copyright 2020 "DHBW Mannheim" 
- * @license   https://moodle.dhbw-mannheim.de/ 
+ * @copyright 2020 "DHBW Mannheim"
+ * @license   https://moodle.dhbw-mannheim.de/
  */
 
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_student_registration';
-$plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0 (Build: 2020051500)';
-$plugin->requires = 2014051200;
-$plugin->version = 20200621715;
+/* 
+ *Live editable table (Ajax and JQuery)  
+ */ 
+
+GLOBAL $DB;
+
+  class liveTable extends html_table {
+
+    
+
+    public function __construct(String $tableName,String $id, Array $attributes)
+    {
+        GLOBAL $DB;
+        $records = $DB->get_records_select($tableName,'closed=0' ,$attributes );
+        
+
+        
+        foreach($attributes as $attribute){
+
+        }
+
+
+        
+    }
+
+
+     
+
+    
+
+}

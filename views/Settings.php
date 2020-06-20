@@ -23,10 +23,9 @@
  * @license   https://moodle.dhbw-mannheim.de/ 
  */
 
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_student_registration';
-$plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0 (Build: 2020051500)';
-$plugin->requires = 2014051200;
-$plugin->version = 20200621715;
+ /*
+  * Setting for ST plugin 
+  * idea: configuration for manual or automatice waiting list record transfers
+ */
+

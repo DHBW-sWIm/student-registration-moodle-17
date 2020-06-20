@@ -21,6 +21,7 @@
  * @copyright 2020 "DHBW Mannheim"
  * @license   https://moodle.dhbw-mannheim.de/
  */
+
 global  $CFG;
 
 require_once("$CFG->libdir/formslib.php");
@@ -40,7 +41,7 @@ class formexample extends moodleform
         $mform->setType('test', PARAM_TEXT);
         $mform->addRule('test', 'Please enter a text', 'required');
         
-        
+        $mform->addElement('date', 'stp', 'Study Program');
         // elements witout further needed configurations 
         $mform->addElement('group', 'test2', 'test group');
         $mform->addElement('checkbox', 'test3', 'test checkbox');

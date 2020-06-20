@@ -1,4 +1,6 @@
 <?php
+
+
 // This file is part of the Local Analytics plugin for Moodle
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -23,10 +25,10 @@
  * @license   https://moodle.dhbw-mannheim.de/ 
  */
 
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_student_registration';
-$plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0 (Build: 2020051500)';
-$plugin->requires = 2014051200;
-$plugin->version = 20200621715;
+ /* This document should contain the a view that enables the manager or secretary to assign 
+  * students to courses for only a certain ST process
+  * idea: table that shows current registered students in reservation list 
+  * each record should have a drop down list that holds already created courses for that ST process
+  * AJAX and JQuery is needed 
+  */

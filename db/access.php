@@ -39,5 +39,11 @@ $capabilities = array(
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
             'manager' => CAP_ALLOW
-        ))
+        )),
+        'local/student_registration:cr' => array(    
+            'captype' => 'write',
+            'contextlevel' => CONTEXT_SYSTEM,
+            'archetypes' => array(
+                'companyrepresentative' => CAP_ALLOW
+            ))
 );

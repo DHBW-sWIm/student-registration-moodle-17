@@ -26,52 +26,66 @@
 
 require_once(dirname(dirname(__DIR__)) . '/config.php');
 require_once(__DIR__ . '/lib.php');
+require_once(__DIR__ . '/assets/PHPClasses/UI.php');
 
-//  Other possible option is  flexible_table  class fount at C:\xampp\htdocs\moodle\lib\tablelib.php  
+global $DB, $PAGE, $OUTPUT, $CFG, $USER;
+require_login();
 
-global $DB, $PAGE, $OUTPUT, $CFG , $USER;
+$context = context_system::instance();
 
-if (isloggedin()) {
-    $context = context_system::instance();
-    if (has_capability('local/student_registration:view', $context) ||
-        has_capability('local/student_registration:manage', $context)) {
+if(has_capability('local/student_registration:manage', $context)){
 
-         $PAGE->set_heading('DHBW Student Registration');
-        echo $OUTPUT->header();
-        echo $OUTPUT->heading(get_string('newprocess', 'local_student_registration'));
+$PAGE->set_heading('DHBW Management Dashboard');
 
+echo $OUTPUT->header();
 
-        /*
-        * Dynamic table creation based on records for sr_process tables that are still open
-        */
-        $table = new html_table();
-        $table->attributes['class'] = 'generaltable mod_index';
-        $count = $DB->count_records_select("sr_process",'id',array('closed=0'));
-        $records = $DB->get_records_select("sr_process",'closed=0' ,array('*') );
-    
-            $table->head = array('Study Program', 'Registration Start Date','Registration End Date');
-            $table->align = array('left', 'left','left');
+$tilesr = new CreateTile();
+$tilesr->setTitle('Student Registration');
+$tilesr->setButtonName('Manage');
+$tilesr->setButtonURL(new moodle_url('/local/student_registration/views/Menu.php'));
+$tilesr->addListElement('Create a new ST process');
+$tilesr->addListElement('Demand Planning');
 
-            for($i=0; $i<$count; $i++) {
+$tilessp = new CreateTile();
+$tilessp->setTitle('Scientific Paper');
+$tilessp->setButtonName('Manage');
+$tilessp->setButtonURL(new moodle_url('/local/student_registration/index.php'));
+$tilessp->addListElement('20 users included');
+$tilessp->addListElement('10 GB of storage');
+$tilessp->addListElement('Priority email support');
+$tilessp->addListElement('Help center access');
 
-                $table->data[] = array($records[$i+1]->program_name, $records[$i+1]->start_date, $records[$i+1]->end_date);
- 
-            }
+$tilesla = new CreateTile();
+$tilesla->setTitle('Lecturer Acquisition');
+$tilesla->setButtonName('Manage');
+$tilesla->setButtonURL(new moodle_url('/local/student_registration/index.php'));
+$tilesla->addListElement('20 users included');
+$tilesla->addListElement('10 GB of storage');
+$tilesla->addListElement('Priority email support');
+$tilesla->addListElement('Help center access');
 
-            $datacount = $DB->count_records('user_info_data', array('fieldid' => $id));
+$tilescrm = new CreateTile();
+$tilescrm->setTitle('CRM');
+$tilescrm->setButtonName('Acess V-Tiger');
+$tilescrm->setButtonURL(new moodle_url('/local/student_registration/index.php'));
+$tilescrm->addListElement('20 users included');
+$tilescrm->addListElement('10 GB of storage');
+$tilescrm->addListElement('Priority email support');
+$tilescrm->addListElement('Help center access');
+$tilescrm->setButtonIcon('fa fa-globe');
 
+$tileContainer = new TileContainer();
+$tileContainer->addTile($tilesr);
+$tileContainer->addTile($tilessp);
+$tileContainer->addTile($tilesla);
+$tileContainer->addTile($tilescrm);
 
-        echo html_writer::table($table);
-  
-        echo $OUTPUT->single_button(new moodle_url('/local/student_registration/views/main_view.php', array('id' => $USER->id)),
-            'Go to View 1', $attributes = null);
-    
-        echo $OUTPUT->single_button(new moodle_url('/local/student_registration/views/Menu.php', array('id' => $USER->id)),
-            'Go to Menu', $attributes = null);
+$tileContainer->render();
 
-  
-        echo $OUTPUT->footer();
+echo $OUTPUT->footer();
 
-    }
+}else {
+    redirect($CFG->wwwroot);
 }
+
 
