@@ -16,7 +16,7 @@ whenever you login from the CR user you'll notice a different view
 
 currently UI tiles are generated directly from the database therefore you must execute the following SQL code:
 
-```
+```sql
 INSERT INTO `mdl_sr_management_tiles` (`id`, `title`, `button_name`, `button_url`, `button_icon`, `list_element_1`, `list_element_2`, `list_element_3`, `list_element_4`, `color`, `tile_order`, `plugin`, `user_id`, `task_path`, `function`, `moodle_capability`, `element_1_link`, `element_2_link`, `element_3_link`, `element_4_link`) VALUES
 (1, 'Student Registration', 'Manage', '/local/student_registration/views/Menu.php', 'fa fa-user', '#1', '#2', '#3', '#4', 'danger', 1, 'Management Dashboard', 2, 'dashboard_lib.php', 'get_tasks_md', 'local/management_dashbaord:view', '/local/student_registration/views/ST_process/ST_prcess_overview.php', NULL, NULL, NULL),
 (2, 'Scientific Paper', 'Manage', '/local/student_registration/index.php', 'fa fa-user', 'Assign Supervisors', '', '', '', 'danger', 2, 'Management Dashboard', 2, '', NULL, 'local/management_dashbaord:view', NULL, NULL, NULL, NULL),
