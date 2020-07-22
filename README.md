@@ -1,13 +1,11 @@
 # student_registration process for the DHBW Mannheim 
-- if you want to install current plugin you need to delete the empty folders 
-- The second step is to create a new role in you moodle instance for Company representative before installation on the plugin otherwise it will crash. 
-- if it crash: increase the version number in version file 
+
 - Setup CR role: 
 - go to Site administration -> users -> permissions ->define roles -> add new role (here is important) just click continue -> ( short name & custom full name = companyrepresentative , select check box of context type = System) and finally scroll down and write in the filter the following :
 local/student_registration:cr
 then select check box allow and save
 
-after this pull changes from github and your moodle instance will upgrade
+after this install the plugin from a zip file; Hint: rename the zip file to student_registration otherwise installation will crash.
 
 if you want to check this create 3 new users: ( manager, company rep A, company rep B )
 - assign a manager role (site administration -> users -> permissions -> assign system role ) to the the first user
