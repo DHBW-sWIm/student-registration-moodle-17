@@ -29,3 +29,71 @@ INSERT INTO `mdl_sr_management_tiles` (`id`, `title`, `button_name`, `button_url
 (11, 'Student Registration', 'Manage', '/local/student_registration/views/ST_process/ST_active_process_CR_ST.php', 'fa fa-user', 'Register Students', '', '', '', 'danger', 2, 'Student Registration', 2, '', NULL, 'local/student_registration:cr', NULL, NULL, NULL, NULL),
 (13, 'Demand Planning', 'Manage', '/local/student_registration/views/ST_process/ST_active_process_CR_DP.php', 'fa fa-user', 'Submit your Demand Planning', NULL, NULL, NULL, 'danger', 1, 'Student Registration', 2, NULL, NULL, 'local/student_registration:cr', NULL, NULL, NULL, NULL),
 (14, 'Reporting', 'View', '/local/student_registration/views/ST_Reporting/ST_reporting_main.php', 'fa fa-bar-chart', '', '', '', '', 'danger', 5, 'Student Registration', 2, '', '', 'local/student_registration:manage', '', '', '', '');
+
+
+Link: https://student-registration.swimdhbw.de/
+-----------------------------------------------
+Admin User name: user
+Admin User password: password
+-----------------------------------------------
+manager user name: manager
+manager user password: Manager123_
+-----------------------------------------------
+manager user name: manager2
+manager user password: Manager123_
+-----------------------------------------------
+Company representative A user name: companya
+password: CompanyA123_
+-----------------------------------------------
+Company representative B user name: companyb
+password: CompanyB123_
+-----------------------------------------------
+             ||    Important    || 
+-----------------------------------------------
+- Add a new Study Programs (WI), then add 
+  relevant study fields (Sales & Consulting)
+- You will be able now to create an ST process
+- You can update the process at any time 
+- To enter the dashbaord settings, you need
+  either an admin user or assign the following
+  permission to any Role: 
+  (local/management_dashbaord:edit)
+  Steps: 
+	1- Go to site administration
+	2- Enter user tab
+	3- Permissions --> define role
+	4- Either define a new role or edit an 
+	   exsiting role. Hint: in case you 
+	   define a new role, the context must 
+	   be set to SYSTEM
+	5- Click on edit and filter the 
+	   capabilities to select the permission
+- To assign a permission for company 
+  representatives, just follow the above-mentioned
+  procedures and assign the following permission
+  (local/student_registration:cr)
+- The Admin user is the root user and has all
+  permissions, therefore; it will see a tiles 
+-----------------------------------------------
+               ||    Info    || 
+-----------------------------------------------
+This plugin is still under development and some
+featuers are not complete such as Email 
+notificaiton (initial template ist sent and cought
+by mail hog at 
+https://mailhog.student-registration.swimdhbw.de/)
+Reporting dashboard is still not complete (only
+process reporting is available)
+Records in the reporting dashboard are shown to
+all users whos have permission to access the 
+dashboard, meanwhile, managing these records 
+(ST processes) can only be done by the user 
+who created them.
+To see records on the database: 
+https://adminer.student-registration.swimdhbw.de/
+System: MySQL
+server: student-registration-swim-process-moodle-mariadb
+username: bn_moodle
+Password: swim-access
+database: bitnami_moodle
+-----------------------------------------------
