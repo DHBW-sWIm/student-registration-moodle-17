@@ -1,0 +1,1 @@
+This file should hold temporary html content for dynamically generated excel files
