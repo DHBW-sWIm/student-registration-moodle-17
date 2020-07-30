@@ -21,15 +21,15 @@
  * Information about the version of the plugin.
  *
  * @package   local_student_registration
- * @copyright 2020 "DHBW Mannheim" 
- * @license   https://moodle.dhbw-mannheim.de/ 
+ * @copyright 2020 "DHBW Mannheim"
+ * @license   https://moodle.dhbw-mannheim.de/
  */
 
 
 /* This document should contain the Student registration process reporting overview (only for managers)
-  * Here the manager should see two tiles:  
-  * 1- tile for all active ST processes, their relevant study fields, planned demand by company vs. actual registration (reservation) 
-  * 2- tile for comparison of the actual vs. plannded demand among years ; totals 
+  * Here the manager should see two tiles:
+  * 1- tile for all active ST processes, their relevant study fields, planned demand by company vs. actual registration (reservation)
+  * 2- tile for comparison of the actual vs. plannded demand among years ; totals
   */
 
 
@@ -37,7 +37,7 @@
 require_once(dirname(dirname(dirname(dirname(__DIR__)))) . '/config.php');
 
 
-//  Other possible option is  flexible_table  class fount at C:\xampp\htdocs\moodle\lib\tablelib.php  
+//  Other possible option is  flexible_table  class fount at C:\xampp\htdocs\moodle\lib\tablelib.php
 
 global $DB, $PAGE, $OUTPUT, $CFG, $USER;
 
@@ -205,11 +205,12 @@ if (has_capability('local/student_registration:manage', $context)) {
             },
             success: function(data) {
                 //dataTable.clear();
-                jQuery("#my-table").empty();
+                jQuery("#my-table thead").remove();
+                jQuery("#my-table tbody").remove();
                 jQuery("#annual_report").remove();
-                jQuery("#my-table").html(data);
                 dataTable.clear();
                 dataTable.destroy();
+                jQuery("#my-table").html(data);
                 jQuery("#my-table").DataTable();
             },
             error: function() {
