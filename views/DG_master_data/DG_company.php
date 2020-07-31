@@ -21,11 +21,11 @@
  * Information about the version of the plugin.
  *
  * @package   local_student_registration
- * @copyright 2020 "DHBW Mannheim" 
- * @license   https://moodle.dhbw-mannheim.de/ 
+ * @copyright 2020 "DHBW Mannheim"
+ * @license   https://moodle.dhbw-mannheim.de/
  */
 
-/* This document should contain a view on partner companies 
+/* This document should contain a view on partner companies
   */
 
 
@@ -118,7 +118,7 @@ if (has_capability('local/student_registration:manage', $context)) {
 <script src="../../assets/JavaScript/jquery.tabledit.js"></script>
 
 <script>
-    // 
+    //
 
     // redirect when click on a row
     $(function() {
@@ -132,7 +132,7 @@ if (has_capability('local/student_registration:manage', $context)) {
 
                     $(this).removeClass('active');
                 }).click(function() {
-                var CompanyID = $(this).attr('CompanyID');
+                var CompanyID = $(this).parent().attr('CompanyID');
                 redirectUrl = 'DG_representative.php';
                 var form = $('<form action="' + redirectUrl + '" method="post">' +
                     '<input type="hidden" name="CompanyID" value="' + CompanyID + '"></input>' + '</form>');
@@ -178,7 +178,7 @@ if (has_capability('local/student_registration:manage', $context)) {
                             function() {
                                 $(this).removeClass('active');
                             }).click(function() {
-                            var CompanyID = $(this).attr('CompanyID');
+                            var CompanyID = $(this).parent().attr('CompanyID');
                             redirectUrl = 'DG_representative.php';
                             var form = $('<form action="' + redirectUrl + '" method="post">' +
                                 '<input type="hidden" name="CompanyID" value="' + CompanyID + '"></input>' + '</form>');
