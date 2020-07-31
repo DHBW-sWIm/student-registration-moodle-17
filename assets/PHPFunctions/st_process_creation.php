@@ -21,8 +21,8 @@
  * Information about the version of the plugin.
  *
  * @package   local_student_registration
- * @copyright 2020 "DHBW Mannheim" 
- * @license   https://moodle.dhbw-mannheim.de/ 
+ * @copyright 2020 "DHBW Mannheim"
+ * @license   https://moodle.dhbw-mannheim.de/
  */
 
 use MongoDB\Exception\Exception;
@@ -87,8 +87,7 @@ if (isset($input['sendMail'])) {
       'sr_study_programs_id' => $studyprogramid, 'semester' => $input['semester']
     ));
 
-    include_once('../../dashboard_lib.php');
-    $new = notify_cr('Email to Company');
+
 
     // notify_cr_pc('', $demandstart, $regstarta, $regstartb);
 
