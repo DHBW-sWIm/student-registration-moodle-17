@@ -45,7 +45,7 @@ try {
             echo '</br>';
         }
 
-        // call tiles from database 
+
 
         function createTiles()
         {
