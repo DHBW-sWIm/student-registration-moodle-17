@@ -1,4 +1,6 @@
-# student_registration process for the DHBW Mannheim
+# Student Registration process for the DHBW Mannheim
+
+Please downloand and deploy the student_registration.zip file to your moodle instance on your development, testing, or production environment.
 
 - Setup CR role:
 - go to Site administration -> users -> permissions ->define roles -> add new role (here is important) just click continue -> ( short name & custom full name = companyrepresentative , select check box of context type = System) and finally scroll down and write in the filter the following :
